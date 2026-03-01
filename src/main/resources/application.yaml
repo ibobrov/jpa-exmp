@@ -17,7 +17,14 @@ spring:
 
   sql:
     init:
-      mode: never # можно always, если хочешь schema.sql/data.sql
+      mode: always # выполнять schema.sql/data.sql
+      platform: postgres
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
 
 logging:
   level:
